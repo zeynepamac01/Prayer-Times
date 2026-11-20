@@ -17,7 +17,7 @@ body{position:relative;z-index:1;background:transparent}
 .section-heading h2,.section-heading .eyebrow,.section-heading .local-time,.sunrise-note,.sunrise-note strong,.sunrise-explainer{color:#fffdf7;text-shadow:0 1px 3px rgba(32,43,36,.78)}
 .sunrise-icon:before,.sunrise-icon:after{border-color:#fffdf7}
 @media(max-width:650px){.site-header{margin-top:12px;padding:0 12px;border-radius:14px}}
-@media(max-width:650px){html:before{width:100vw;height:100vh;transform:translate(-50%,-50%);background-image:url('/antique-botanical-background.webp')}}
+@media(max-width:650px){html:before{width:100vw;height:100vh;transform:translate(-50%,-50%);background-image:var(--page-wallpaper)}}
 .site-footer{border-top:0;color:#fffdf7;text-shadow:0 1px 3px rgba(20,30,24,.92),0 0 5px rgba(20,30,24,.5)}
 .site-footer a{color:#fffdf7;text-shadow:0 1px 3px rgba(20,30,24,.92),0 0 5px rgba(20,30,24,.5)}
 .footer-rule{background:rgba(255,253,247,.75)}

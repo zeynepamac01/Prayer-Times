@@ -11,7 +11,13 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000. `npm run build` creates a production build; `npm start` serves it. The app can be deployed to Vercel or any host supporting Next.js.
+Open http://localhost:3000. `npm run build` creates a static site in `out/` for deployment.
+
+## GitHub Pages deployment
+
+The included GitHub Actions workflow builds and deploys the static site when changes are pushed to `main`. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. The repository base path is `/Prayer-Times`; the config enables it in GitHub Actions while keeping local development at `/`.
+
+The wallpaper URL is assembled with that base path so it loads on both localhost and the GitHub Pages project site.
 
 Run the date and countdown edge-case suite with `npm test`.
 

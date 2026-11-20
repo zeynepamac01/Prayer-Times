@@ -9,5 +9,9 @@ export const metadata: Metadata = {
 };
 const wallpaper = `url("${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/antique-botanical-background.webp")`;
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return (
+    <html lang="en" style={{ '--page-wallpaper': wallpaper } as React.CSSProperties}>
+      <body>{children}</body>
+    </html>
+  );
 }
