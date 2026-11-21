@@ -13,10 +13,11 @@ describe('Bloomington prayer date and time handling', () => {
     }
   });
   it('applies the Bloomington daylight saving offset to calculated dates', () => {
-    const formatter = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Indiana/Indianapolis', hour: 'numeric' });
-    for (const day of ['2026-03-07', '2026-03-08', '2026-11-01', '2026-11-02']) {
-      expect(formatter.format(getSchedule(day).prayers[1].time)).toContain('12');
-    }
+    const formatter = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Indiana/Indianapolis', hour: 'numeric', hourCycle: 'h12' });
+    expect(formatter.format(getSchedule('2026-03-07').prayers[1].time)).toBe('12 PM');
+    expect(formatter.format(getSchedule('2026-03-08').prayers[1].time)).toBe('1 PM');
+    expect(formatter.format(getSchedule('2026-11-01').prayers[1].time)).toBe('12 PM');
+    expect(formatter.format(getSchedule('2026-11-02').prayers[1].time)).toBe('12 PM');
   });
   it('handles leap day and year rollover', () => {
     expect(getSchedule('2028-02-29').dateKey).toBe('2028-02-29');
